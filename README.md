@@ -6,6 +6,7 @@ The keyword is set to `symb` and the available options are:
 
 - `-->` for right pinting arrows (that was kind of obvious, right? Wait there is more...)
 - `<--` for left pointing arrows (didn't I tell you?)
+- `<->` for to tip arrows
 - `UP>` for upward  pointing arrows
 - `DN>` for downward pointing arrows
 - `CHK` for all kind of checkmarks ( accept **and** cancel )

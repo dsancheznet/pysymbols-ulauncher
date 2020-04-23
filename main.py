@@ -11,16 +11,21 @@ from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 from ulauncher.api.shared.action.CopyToClipboardAction import CopyToClipboardAction
 
 logger = logging.getLogger(__name__)
-
+#My screen can only cope with a selection of 12 items max, so keep that in mind then defining lists.
 mySymbols = {
     '-->': [ '↣', '↦', '⇀', '⇁', '⇉', '⇛', '⇝', '⇢', '⇥', '⇨', '➡', '⟶'],
     '<--': [ '↢', '↤', '↼', '↽', '⇇', '⇚', '⇜', '⇠', '⇤', '⇦', '⬅', '⟵' ],
     '<->': [ '⇹', '⇼', '⥎', '⥐', '↹', '⇋', '⇌', '⇄', '⬌', '⟷' ],
     'UP>': [ '↥', '↾', '↿', '⇈', '⇞', '⇡', '⇧', '⥣', '⤊', '⟰', '⬆' ],
     'DN>': [ '↧', '⇂', '⇃', '⇊', '⇟', '⇣', '⇩', '⥥', '⤋', '⟱', '⬇' ],
-    'CHK': [ '✓', '✔', '☑', '✗', '✘', '☒'],
-    'FRC': [ '½', '⅓', '⅔', '¼', '¾' , '⅛', '⅜', '⅝', '⅞', '‰', '‱'],
-    'MAC': [ '⌘', '⌃', '⌥', '⇧', '⇪', '⌫', '⏏', '⎋', '␣' '↩']
+    'CHECK': [ '✓', '✔', '☑', '✗', '✘', '☒'],
+    'FRAC': [ '½', '⅓', '⅔', '¼', '¾' , '⅛', '⅜', '⅝', '⅞', '‰', '‱'],
+    'HEART' : [ '💗', '💓', '💔', '💟', '💕', '💖', '💘', '💝', '💞' ],
+    'MATH' : [ 'π', '∞', 'Σ', '÷', '±'  ],
+    'SUBNUM' : [ '₀', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉' ],
+    'SUPNUM' : [ '⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹' ],
+    'MAC': [ '⌘', '⌃', '⌥', '⇧', '⇪', '⌫', '⏏', '⎋', '␣', '↩']
+
 }
 
 class SymbolExtension(Extension):
