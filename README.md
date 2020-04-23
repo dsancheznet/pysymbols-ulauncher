@@ -15,4 +15,3 @@ The keyword is set to `symb` and the available options are:
 ## What's to come
 
 I will be including more sets in the list as soon as I'll need them. If you'd like to have a special set included, please feel free to submit a patch.
-
