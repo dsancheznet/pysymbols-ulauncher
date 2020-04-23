@@ -34,13 +34,13 @@ class KeywordQueryEventListener(EventListener):
     def on_event(self, event, extension):
         tmpSymbols = []
         if event.get_argument() in mySymbols:
-            for tmpMatch in mySymbols:
+            for tmpMatch in mySymbols[event.get_argument()]:
                 tmpSymbols.append(
                     ExtensionResultItem(icon='images/icon.png',
                                         name=tmpMatch,
                                         description='Copy ' + tmpMatch + ' to clipboard', on_enter=CopyToClipboardAction(tmpMatch)))
         else:
-            logger.debug( event.get_argument() + " not found ")
+            logger.debug( "|"+event.get_argument()+" not found ")
         return RenderResultListAction(tmpSymbols)
 
 if __name__ == '__main__':
