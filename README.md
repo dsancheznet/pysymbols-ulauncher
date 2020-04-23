@@ -1,5 +1,7 @@
 # Symbols Extension for ULauncher
 
+![Interface](./images/Capture.png)
+
 ## A very simple extension for ULauncher to get special symbols
 
 The keyword is set to `symb` and the available options are:
@@ -9,9 +11,14 @@ The keyword is set to `symb` and the available options are:
 - `<->` for to tip arrows
 - `UP>` for upward  pointing arrows
 - `DN>` for downward pointing arrows
-- `CHK` for all kind of checkmarks ( accept **and** cancel )
-- `FRC` for fraction symbols ( not all are available in every font )
+- `CHECK` for all kind of checkmarks ( accept **and** cancel )
+- `FRAC` for fraction symbols ( not all are available in every font )
+- `HEART` for various hart symbols (I'm a romantic, ya'know)
+- `MATH` for various mathematical symbols
+- `SUBNUM` for subscript numbers
+- `SUPNUM` for superscript numbers
 - `MAC` for MacOS symbols such as command, control or option keys
+
 
 ## What's to come
 
