@@ -1,0 +1,19 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "Arrows",
+  "description": "An extension to copy beautiful arrows to the clipboard",
+  "developer_name": "D.Sanchez",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "symbol_key",
+      "type": "keyword",
+      "name": "Symbol",
+      "description": "Symbol extension",
+      "default_value": "symb"
+    }
+  ]
+}
