@@ -1,5 +1,5 @@
 # import json
-# import logging
+import logging
 # from time import sleep
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.client.EventListener import EventListener
