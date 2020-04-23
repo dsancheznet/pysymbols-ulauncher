@@ -27,7 +27,6 @@ class SymbolExtension(Extension):
     def __init__(self):
         super(SymbolExtension, self).__init__()
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
-        self.subscribe(ItemEnterEvent, ItemEnterEventListener())
 
 
 class KeywordQueryEventListener(EventListener):
