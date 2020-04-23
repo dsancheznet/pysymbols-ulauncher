@@ -46,7 +46,9 @@ class KeywordQueryEventListener(EventListener):
     def on_event(self, event, extension):
         tmpSymbols = []
         tmpKey = event.get_argument()
-        if tmpKey.upper() in mySymbols:
+        if tmpKey == None:
+            return RenderResultListAction([ExtensionResultItem(icon='images/icon.png', name='Please specify the desired symbol set', on_enter=DoNothingAction())])
+        elif tmpKey.upper() in mySymbols:
             for tmpMatch in mySymbols[tmpKey.upper()]:
                 tmpSymbols.append(
                     ExtensionResultItem(icon='images/icon.png',
@@ -54,7 +56,8 @@ class KeywordQueryEventListener(EventListener):
                                         description='Copy ' + tmpMatch + ' to clipboard', on_enter=CopyToClipboardAction(tmpMatch)))
             return RenderResultListAction(tmpSymbols)
         else:
-            return RenderResultListAction([ExtensionResultItem(icon='images/icon.png', name='Please specify the desired symbol set', on_enter=DoNothingAction())])
+            return RenderResultListAction([ExtensionResultItem(icon='images/icon.png', name='Unknown code...', on_enter=DoNothingAction())])
+
 
 if __name__ == '__main__':
     SymbolExtension().run()
