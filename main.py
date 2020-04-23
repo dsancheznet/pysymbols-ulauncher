@@ -41,7 +41,6 @@ class KeywordQueryEventListener(EventListener):
         tmpSymbols = []
         tmpKey = event.get_argument()
         if tmpKey.upper() in mySymbols:
-
             for tmpMatch in mySymbols[tmpKey.upper()]:
                 tmpSymbols.append(
                     ExtensionResultItem(icon='images/icon.png',

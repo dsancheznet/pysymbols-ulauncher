@@ -1,6 +1,6 @@
 # Symbols Extension for ULauncher
 
-![Interface](./images/Capture.png)
+![Interface](./images/capture.png)
 
 ## A very simple extension for ULauncher to get special symbols
 
