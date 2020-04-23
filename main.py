@@ -1,32 +1,38 @@
-import json
-import logging
-from time import sleep
+# import json
+# import logging
+# from time import sleep
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.client.EventListener import EventListener
 from ulauncher.api.shared.event import KeywordQueryEvent, ItemEnterEvent
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
-from ulauncher.api.shared.action.ExtensionCustomAction import ExtensionCustomAction
-from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 from ulauncher.api.shared.action.CopyToClipboardAction import CopyToClipboardAction
+from ulauncher.api.shared.action.DoNothingAction import DoNothingAction
 
 logger = logging.getLogger(__name__)
-#My screen can only cope with a selection of 12 items max, so keep that in mind then defining lists.
-mySymbols = {
-    '-->': [ '↣', '↦', '⇀', '⇁', '⇉', '⇛', '⇝', '⇢', '⇥', '⇨', '➡', '⟶'],
-    '<--': [ '↢', '↤', '↼', '↽', '⇇', '⇚', '⇜', '⇠', '⇤', '⇦', '⬅', '⟵' ],
-    '<->': [ '⇹', '⇼', '⥎', '⥐', '↹', '⇋', '⇌', '⇄', '⬌', '⟷' ],
-    'UP>': [ '↥', '↾', '↿', '⇈', '⇞', '⇡', '⇧', '⥣', '⤊', '⟰', '⬆' ],
-    'DN>': [ '↧', '⇂', '⇃', '⇊', '⇟', '⇣', '⇩', '⥥', '⤋', '⟱', '⬇' ],
-    'CHECK': [ '✓', '✔', '☑', '✗', '✘', '☒'],
-    'FRAC': [ '½', '⅓', '⅔', '¼', '¾' , '⅛', '⅜', '⅝', '⅞', '‰', '‱'],
-    'HEART' : [ '💗', '💓', '💔', '💟', '💕', '💖', '💘', '💝', '💞' ],
-    'MATH' : [ 'π', '∞', 'Σ', '÷', '±'  ],
-    'SUBNUM' : [ '₀', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉' ],
-    'SUPNUM' : [ '⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹' ],
-    'MAC': [ '⌘', '⌃', '⌥', '⇧', '⇪', '⌫', '⏏', '⎋', '␣', '↩']
 
+#My screen can only cope with a selection of 12 items max, so keep you screen size in mind when defining lists.
+
+mySymbols = {
+    '-->'   : [ '↦', '⇀', '⇁', '⇉', '⇛', '⇝', '⇢', '⇥', '⇨', '➡', '⟶'],
+    '<--'   : [ '↤', '↼', '↽', '⇇', '⇚', '⇜', '⇠', '⇤', '⇦', '⬅', '⟵' ],
+    '<->'   : [ '⇹', '⇼', '⥎', '⥐', '⇋', '⇌', '⇄', '↹', '⬌', '⟷' ],
+    'UP>'   : [ '↥', '↾', '↿', '⇈', '⇞', '⇡', '⇧', '⥣', '⤊', '⟰', '⬆' ],
+    'DN>'   : [ '↧', '⇂', '⇃', '⇊', '⇟', '⇣', '⇩', '⥥', '⤋', '⟱', '⬇' ],
+    'O>'    : [ '⮊', '⮈', '⮉', '⮋', '⭮', '⭯', '⮌', '⮎', '⮍', '⮏' ],
+    'CHECK' : [ '✓', '✔', '☑', '✗', '✘', '☒'],
+    'FRAC'  : [ '½', '⅓', '⅔', '¼', '¾' , '⅛', '⅜', '⅝', '⅞', '‰', '‱'],
+    'HEART' : [ '💗', '💓', '💔', '💟', '💕', '💖', '💘', '💝', '💞' ],
+    'MATH'  : [ 'π', '∞', 'Σ', '÷', '±' ],
+    'SUBNUM': [ '₀', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉' ],
+    'SUPNUM': [ '⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹' ],
+    'SEX'   : [ '♂', '♀', '⚥', '⚤', '⚣', '⚢', '☿' ],
+    'ZODIAC': [ '♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓' ],
+    'ROMAN' : [ 'Ⅰ', 'Ⅱ', 'Ⅲ', 'Ⅳ', 'Ⅴ', 'Ⅵ', 'Ⅶ', 'Ⅷ', 'Ⅸ', 'Ⅹ', 'Ⅺ', 'Ⅻ', 'Ⅼ', 'Ⅽ', 'Ⅾ', 'Ⅿ' ],
+    'MAC'   : [ '⌘', '⌃', '⌥', '⇧', '⇪', '⌫', '⏏', '⎋', '␣', '↩']
 }
+
+#'' : [ '', '' ],
 
 class SymbolExtension(Extension):
 
@@ -46,10 +52,9 @@ class KeywordQueryEventListener(EventListener):
                     ExtensionResultItem(icon='images/icon.png',
                                         name=tmpMatch,
                                         description='Copy ' + tmpMatch + ' to clipboard', on_enter=CopyToClipboardAction(tmpMatch)))
+            return RenderResultListAction(tmpSymbols)
         else:
-            if event.get_argument() != None:
-                logger.debug( "["+tmpKey+"] "+tmpKey.upper()+" not found ")
-        return RenderResultListAction(tmpSymbols)
+            return RenderResultListAction([ExtensionResultItem(icon='images/icon.png', name='Please specify the desired symbol set', on_enter=DoNothingAction())])
 
 if __name__ == '__main__':
     SymbolExtension().run()
