@@ -36,7 +36,10 @@ class KeywordQueryEventListener(EventListener):
         tmpSymbols = []
         if event.get_argument() in mySymbols:
             for tmpMatch in mySymbols:
-                tmpSymbols.append(ExtensionResultItem(icon='images/icon.png', name=tmpMatch, description='Copy ' + tmpMatch + ' to clipboard', on_enter=CopyToClipboardAction(tmpMatch))))
+                tmpSymbols.append(
+                    ExtensionResultItem(icon='images/icon.png',
+                                        name=tmpMatch,
+                                        description='Copy ' + tmpMatch + ' to clipboard', on_enter=CopyToClipboardAction(tmpMatch)))
         return RenderResultListAction(tmpSymbols)
 
 if __name__ == '__main__':
