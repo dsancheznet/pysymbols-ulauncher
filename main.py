@@ -41,7 +41,8 @@ class KeywordQueryEventListener(EventListener):
                                         name=tmpMatch,
                                         description='Copy ' + tmpMatch + ' to clipboard', on_enter=CopyToClipboardAction(tmpMatch)))
         else:
-            logger.debug( "|"+event.get_argument()+" not found ")
+            if event.get_argument() != NoneType:
+                logger.debug( "["+event.get_argument()+"] not found ")
         return RenderResultListAction(tmpSymbols)
 
 if __name__ == '__main__':
