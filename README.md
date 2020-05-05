@@ -22,6 +22,7 @@ The keyword is set to `symb` and the available symbol sets are:
 - `MEDIA` ◀️, ⏪, ⏮️, ⏭️, ⏩, ▶️, ⏸️, ⏯️, ⏺️, ⏹️, ⏏️
 - `ZODIAC`  ♈, ♉, ♊, ♋, ♌, ♍, ♎, ♏, ♐, ♑, ♒, ♓
 - `ROMAN`  Ⅰ, Ⅱ, Ⅲ, Ⅳ, Ⅴ, Ⅵ, Ⅶ, Ⅷ, Ⅸ, Ⅹ, Ⅺ, Ⅻ, Ⅼ, Ⅽ, Ⅾ, Ⅿ
+- `TRADE` ©, ®, ℗, ™, ℠, ㋏
 - `MAC`  ⌘, ⌃, ⌥, ⇧, ⇪, ⌫, ⏏, ⎋, ␣, ↩
 
 ## What's to come
@@ -33,4 +34,7 @@ I will be including more sets in the list as soon as I'll need them. If you'd li
 - 23 APR 2020 Uploaded first working version of the program. Had to battle with quite a few hickups, but now everything runs smoothly.
 
 - 24 APR 2020 Added 'MEDIA' set.
+
 - 02 MAY 2020 Updated 'MATH' set.
+
+- 05 MAY 2020 Added 'TRADE' set
