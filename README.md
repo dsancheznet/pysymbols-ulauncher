@@ -19,11 +19,13 @@ The keyword is set to `symb` and the available symbol sets are:
 - `SUBNUM`  ₀, ₁, ₂, ₃, ₄, ₅, ₆, ₇, ₈, ₉
 - `SUPNUM`  ⁰, ¹, ², ³, ⁴, ⁵, ⁶, ⁷, ⁸, ⁹
 - `SEX`  ♂, ♀, ⚥, ⚤, ⚣, ⚢, ☿
+- `FLAG` 🇪🇺, 🇪🇸, 🇩🇪, 🇫🇷, 🇮🇹, 🇳🇱, 🇧🇪, 🇮🇨, 🇬🇧
 - `MEDIA` ◀️, ⏪, ⏮️, ⏭️, ⏩, ▶️, ⏸️, ⏯️, ⏺️, ⏹️, ⏏️
 - `ZODIAC`  ♈, ♉, ♊, ♋, ♌, ♍, ♎, ♏, ♐, ♑, ♒, ♓
 - `ROMAN`  Ⅰ, Ⅱ, Ⅲ, Ⅳ, Ⅴ, Ⅵ, Ⅶ, Ⅷ, Ⅸ, Ⅹ, Ⅺ, Ⅻ, Ⅼ, Ⅽ, Ⅾ, Ⅿ
 - `TRADE` ©, ®, ℗, ™, ℠, ㋏
 - `MAC`  ⌘, ⌃, ⌥, ⇧, ⇪, ⌫, ⏏, ⎋, ␣, ↩
+- `EMO`  🤣, 😂, 😉, 😎, 😠, 😱, 😩, 👍, 👎, 👋, 💩, 😘
 
 ## What's to come
 
@@ -38,3 +40,5 @@ I will be including more sets in the list as soon as I'll need them. If you'd li
 - 02 MAY 2020 Updated 'MATH' set.
 
 - 05 MAY 2020 Added 'TRADE' set
+
+- 21 AGO 2021 Added and documented the 'EMO' and 'FLAG' set
